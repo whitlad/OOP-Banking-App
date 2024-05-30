@@ -32,7 +32,7 @@ public class UserInterface {
         while (!quit) {
             System.out.println("\n*********************************" +
                     "           \nWelcome to Kilmaine Credit Union" +
-                                "\n********************************");
+                                "\n*********************************");
             System.out.println("Please choose an option: ");
             System.out.println("1. Create Customer");
             System.out.println("2. Update Customer");
@@ -45,6 +45,7 @@ public class UserInterface {
             System.out.println("9. Display All Customers and Associated Accounts");
             System.out.println("10. Display Transactions on Account");
             System.out.println("0. Exit");
+            System.out.println("-------------------------------------------------");
 
             String userInput = reader.getInput();
 
@@ -116,7 +117,7 @@ public class UserInterface {
 
         Customer customer = new Customer(firstName, lastName, address, postcode, phoneNumber, dateOfBirth);
         bank.addCustomer(customer);
-        System.out.println("*****************"+"New customer " + firstName + " " + lastName + " added.");
+        System.out.println("****"+"New customer added"+"****\n"  + customer);
     }
 
     /**
