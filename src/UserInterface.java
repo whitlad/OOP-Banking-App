@@ -137,7 +137,7 @@ public class UserInterface {
             customer.setFirstName(firstName);
             customer.setLastName(lastName);
 
-            System.out.println("*****************"+"Customer details updated.");
+            System.out.println("******"+"Customer details updated"+ "******\n1"  + customer);
         } else {
             System.out.println("*****************"+"Customer not found."+"*****************");
         }
