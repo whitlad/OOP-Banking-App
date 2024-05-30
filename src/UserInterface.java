@@ -30,7 +30,10 @@ public class UserInterface {
         boolean quit = false;
 
         while (!quit) {
-            System.out.println("Please choose: ");
+            System.out.println("\n*********************************" +
+                    "           \nWelcome to Kilmaine Credit Union" +
+                                "\n********************************");
+            System.out.println("Please choose an option: ");
             System.out.println("1. Create Customer");
             System.out.println("2. Update Customer");
             System.out.println("3. Display Customer Details");
@@ -78,7 +81,8 @@ public class UserInterface {
                     break;
                 case "0":
                     quit = true;
-                    System.out.println("Exiting application. Thank you .");
+                    System.out.println("****************************\n" +
+                            "Exiting application. Thank you .");
                     break;
                 default:
                     System.out.println("That is not a valid choice, please try again.\n");
@@ -112,7 +116,7 @@ public class UserInterface {
 
         Customer customer = new Customer(firstName, lastName, address, postcode, phoneNumber, dateOfBirth);
         bank.addCustomer(customer);
-        System.out.println("New customer " + firstName + " " + lastName + " added.");
+        System.out.println("*****************"+"New customer " + firstName + " " + lastName + " added.");
     }
 
     /**
@@ -132,9 +136,9 @@ public class UserInterface {
             customer.setFirstName(firstName);
             customer.setLastName(lastName);
 
-            System.out.println("Customer details updated.");
+            System.out.println("*****************"+"Customer details updated.");
         } else {
-            System.out.println("Customer not found.");
+            System.out.println("*****************"+"Customer not found."+"*****************");
         }
     }
 
@@ -143,13 +147,13 @@ public class UserInterface {
      */
     private void displayCustomerDetails() {
         System.out.println("Please enter customer ID to display details:");
-        int customerId = Integer.parseInt(reader.getInput());
+        int customerID= Integer.parseInt(reader.getInput());
 
-        Customer customer = bank.getCustomerByNumber(customerId);
+        Customer customer = bank.getCustomerByNumber(customerID);
         if (customer != null) {
             System.out.println(customer);
         } else {
-            System.out.println("Customer not found.");
+            System.out.println("*****************"+"Customer not found."+"*****************");
         }
     }
 

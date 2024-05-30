@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2137e7c8-8c90-467f-afbe-6b6749daa6be" name="Changes" comment="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin">
+    <list default="true" id="2137e7c8-8c90-467f-afbe-6b6749daa6be" name="Changes" comment="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin&#10;menu 1 - requires error resliance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1713354930606</updated>
-      <workItem from="1716891527888" duration="24864000" />
+      <workItem from="1716891527888" duration="26174000" />
     </task>
     <task id="LOCAL-00001" summary="This is the final created customer class">
       <option name="closed" value="true" />
@@ -120,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717088548746</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin&#10;menu 1 - requires error resliance">
+      <option name="closed" value="true" />
+      <created>1717106987120</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717106987120</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +150,8 @@
     <MESSAGE value="This is the final created customer class&#10;added phonenumber to customerclass" />
     <MESSAGE value="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created" />
     <MESSAGE value="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin" />
-    <option name="LAST_COMMIT_MESSAGE" value="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin" />
+    <MESSAGE value="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin&#10;menu 1 - requires error resliance" />
+    <option name="LAST_COMMIT_MESSAGE" value="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin&#10;menu 1 - requires error resliance" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

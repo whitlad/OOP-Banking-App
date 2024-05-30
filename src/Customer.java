@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 public class Customer {
     private static int NEXT_CUSTOMER_NUMBER = 1;
-    private int number; // Customer ID number
+    private int customerID; // Customer ID number
     private String firstName; // First name of customer
     private String lastName; // Last name of customer
     private String address; // Address of customer
@@ -39,7 +39,7 @@ public class Customer {
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
         this.accounts = new ArrayList<>();
-        this.number = NEXT_CUSTOMER_NUMBER++;
+        this.customerID = NEXT_CUSTOMER_NUMBER++;
     }
 
     // Overloaded constructor to create a customer with just first and last name
@@ -73,7 +73,7 @@ public class Customer {
     }
 
     public int getNumber() {
-        return this.number;
+        return this.customerID;
     }
 
     public List<Account> getAccounts() {
@@ -140,11 +140,22 @@ public class Customer {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Customer customer = (Customer) obj;
-        return number == customer.number;
+        return customerID == customer.customerID;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number);
+        return Objects.hash(customerID);
+    }
+
+    @Override
+    public String toString() {
+        return "Customer ID: " + customerID +
+                "\nFirst Name: " + firstName +
+                "\nLast Name: " + lastName +
+                "\nAddress: " + address +
+                "\nPostcode: " + postCode +
+                "\nPhone Number: " + phoneNumber +
+                "\nDate of Birth: " + dateOfBirth;
     }
 }
