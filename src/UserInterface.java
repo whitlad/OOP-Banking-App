@@ -82,8 +82,8 @@ public class UserInterface {
                     break;
                 case "0":
                     quit = true;
-                    System.out.println("****************************\n" +
-                            "Exiting application. Thank you .");
+                    System.out.println("********************************\n" +
+                            "Exiting application. Thank you.\n" + "********************************\n");
                     break;
                 default:
                     System.out.println("That is not a valid choice, please try again.\n");
