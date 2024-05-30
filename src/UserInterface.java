@@ -68,10 +68,10 @@ public class UserInterface {
                     withdrawFromAccount();
                     break;
                 case "8":
-                    //DAWN displayAllCustomers();
+                    displayAllCustomers();
                     break;
                 case "9":
-                    //DAWN displayCustomerAndAccounts();
+                    displayCustomerAndAccounts();
                     break;
                 case "10":
                     displayTransactionsOnAccount();
@@ -91,6 +91,7 @@ public class UserInterface {
      * Allows a user to create a new customer.
      */
     private void createCustomer() {
+
         System.out.println("Please enter first name:");
         String firstName = reader.getInput();
 
@@ -106,10 +107,10 @@ public class UserInterface {
         System.out.println("Please enter phone number:");
         String phoneNumber = reader.getInput();
 
-        System.out.println("Please enter date of birth (YYYY-MM-DD):");
-        LocalDate dob = LocalDate.parse(reader.getInput());
+        System.out.println("Please enter date of birth (DD-MM-YYYY):");
+        String dateOfBirth= reader.getInput();
 
-        Customer customer = new Customer(firstName, lastName, address, postcode, phoneNumber, dob);
+        Customer customer = new Customer(firstName, lastName, address, postcode, phoneNumber, dateOfBirth);
         bank.addCustomer(customer);
         System.out.println("New customer " + firstName + " " + lastName + " added.");
     }

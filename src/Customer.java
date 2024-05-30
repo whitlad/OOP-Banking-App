@@ -18,7 +18,7 @@ public class Customer {
     private String address; // Address of customer
     private String postCode; // Postcode of customer
     private String phoneNumber; // Phone number of customer
-    private LocalDate dateOfBirth; // Date of birth of customer
+    private String dateOfBirth; // Date of birth of customer
     private List<Account> accounts;
 
     /**
@@ -31,7 +31,7 @@ public class Customer {
      * @param phoneNumber the phone number of the customer
      * @param dateOfBirth the date of birth of the customer
      */
-    public Customer(String firstName, String lastName, String address, String postCode, String phoneNumber, LocalDate dateOfBirth) {
+    public Customer(String firstName, String lastName, String address, String postCode, String phoneNumber, String dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -44,7 +44,7 @@ public class Customer {
 
     // Overloaded constructor to create a customer with just first and last name
     public Customer(String firstName, String lastName) {
-        this(firstName, lastName, "", "", "", LocalDate.now()); // Default values for other fields
+        this(firstName, lastName, "", "", "", ""); // Default values for other fields
     }
 
     // Getters
@@ -68,7 +68,7 @@ public class Customer {
         return phoneNumber;
     }
 
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
