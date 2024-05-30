@@ -1,0 +1,134 @@
+Index: src/UserInterface.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/**\r\n * Provides a user interface for the Banking Application\r\n *\r\n */\r\npublic class UserInterface {\r\n\r\n   // public Library library;  //make it public for testing and private when finished\r\n\r\n    private InputReader reader;\r\n\r\n\r\n    public UserInterface()\r\n    {\r\n\r\n        reader = new InputReader();\r\n\r\n    }\r\n\r\n    /**\r\n     * &\r\n     * shows the main menu for the application until the user chooses to quit\r\n     */\r\n\r\n    //Create Customer\r\n    //Update Customer\r\n    //Display Customer Details\r\n    //Open Bank Account\r\n    //Close Bank Account\r\n    //Deposit to Account\r\n    //Withdrawal from Account\r\n    //Display list of all customers\r\n    //Display list of customers and associated each account\r\n    //Display transactions on a particular account\r\n    //SIMPLE MENU SYSTEM\r\n\r\n     public void showMainMenu()\r\n    {\r\n        boolean quit = false;\r\n\r\n\r\n        while (quit == false) //white (!quit) ths is the same as quit == false\r\n        {\r\n            System.out.println(\"Please choose: \");\r\n            System.out.println(\"1. Create Customer\");\r\n            System.out.println(\"2. Update Customer\");\r\n            System.out.println(\"3. Display Customer Details\");\r\n            System.out.println(\"4. Open Bank Account\");\r\n            System.out.println(\"5. Close Bank Account\");\r\n            System.out.println(\"6. Deposit to Account\");\r\n            System.out.println(\"7. Withdraw from Account\");\r\n            System.out.println(\"8. Display All Customers\");\r\n            System.out.println(\"9. Display All Customers and Associated Accounts\");\r\n            System.out.println(\"10. Display Transactions on Account\");\r\n            System.out.println(\"0. Exit\");\r\n\r\n\r\n\r\n\r\n\r\n\r\n            System.out.println(\"0. exit application\");\r\n\r\n            String userInput = reader.getInput();\r\n\r\n            switch (userInput)\r\n            {\r\n                case \"1\":\r\n                    //call addBook method\r\n                    this.addBook();\r\n                    break;\r\n\r\n                case \"2\":\r\n                    // call listAllBooks\r\n                    this.listAllBooks();\r\n                    break;\r\n\r\n                case \"0\":\r\n                    quit = true;\r\n                    break;\r\n\r\n                default :\r\n                    System.out.println(\"That is not a valid choice, please try again\\n\");\r\n                    break;\r\n\r\n            }\r\n        }\r\n\r\n\r\n    }\r\n\r\n    /**\r\n     * Allows a user to add a book to the library\r\n     */\r\n    public void addBook()\r\n    {\r\n        System.out.println(\"Please enter author:\");\r\n        String author = reader.getInput();\r\n\r\n        System.out.println(\"Please enter the title\");\r\n        String title = reader.getInput();\r\n\r\n        System.out.println(\"Please enter the ISBN\");\r\n        String ISBN = reader.getInput();\r\n\r\n        Book b = new Book(author, title, ISBN);\r\n        library.addBook(b);\r\n        System.out.println(\"New Book \" + title + \" added\");  //see if this works\r\n\r\n\r\n    }\r\n\r\n    public void listAllBooks()\r\n    {\r\n        this.library.listAllBooks();\r\n\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/UserInterface.java b/src/UserInterface.java
+--- a/src/UserInterface.java	(revision fd9c0cd54f4ce6f5c184fd5534c5836eef972aca)
++++ b/src/UserInterface.java	(date 1715762003250)
+@@ -4,7 +4,7 @@
+  */
+ public class UserInterface {
+ 
+-   // public Library library;  //make it public for testing and private when finished
++
+ 
+     private InputReader reader;
+ 
+@@ -91,7 +91,7 @@
+     /**
+      * Allows a user to add a book to the library
+      */
+-    public void addBook()
++    public void addCustomer()
+     {
+         System.out.println("Please enter author:");
+         String author = reader.getInput();
+Index: src/InputReader.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Scanner;\r\n\r\n/**\r\n * A utlilty class to read user input from the command line\r\n */\r\n\r\npublic class InputReader\r\n{\r\n\r\n\r\n    private Scanner scanner;\r\n\r\n\r\n\r\n\r\n\r\n    public InputReader()\r\n    {\r\n\r\n\r\n\r\n        scanner = new Scanner(System.in);\r\n\r\n    }\r\n\r\n    /**\r\n     * Returnes the line of input entered by the user at the command line\r\n     * @return the line of input entered by the user at the command line\r\n     */\r\n\r\n    public String getInput()\r\n    {\r\n        return scanner.nextLine();\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/InputReader.java b/src/InputReader.java
+--- a/src/InputReader.java	(revision fd9c0cd54f4ce6f5c184fd5534c5836eef972aca)
++++ b/src/InputReader.java	(date 1716128609000)
+@@ -4,7 +4,7 @@
+  * A utlilty class to read user input from the command line
+  */
+ 
+-public class InputReader
++public class                                                                                                                                                                                                                                                                                                                                                                                                                            InputReader
+ {
+ 
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"2137e7c8-8c90-467f-afbe-6b6749daa6be\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2fE8Z3vqx2vtx0tWqP9ESwDQVTg\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"last_opened_file_path\": \"C:/Users/50044237/OneDrive - SERC/OOP/Projects/IdeaProjects/OOP-Assignment-50044237\",\r\n    \"onboarding.tips.debug.path\": \"C:/Users/50044237/IdeaProjects/OOP-Assignment-50044237/src/Main.java\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"2137e7c8-8c90-467f-afbe-6b6749daa6be\" name=\"Changes\" comment=\"\" />\r\n      <created>1713354930606</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1713354930606</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/Main.java</url>\r\n          <line>13</line>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision fd9c0cd54f4ce6f5c184fd5534c5836eef972aca)
++++ b/.idea/workspace.xml	(date 1716146586000)
+@@ -4,9 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="2137e7c8-8c90-467f-afbe-6b6749daa6be" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++    <list default="true" id="2137e7c8-8c90-467f-afbe-6b6749daa6be" name="Changes" comment="commit creation&#10;&#10;started menu">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputReader.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -30,8 +31,15 @@
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "git-widget-placeholder": "master",
+-    "last_opened_file_path": "C:/Users/50044237/OneDrive - SERC/OOP/Projects/IdeaProjects/OOP-Assignment-50044237",
+-    "onboarding.tips.debug.path": "C:/Users/50044237/IdeaProjects/OOP-Assignment-50044237/src/Main.java"
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "C:/Users/Dawn/OneDrive - SERC/OOP/Projects/IdeaProjects/OOP-Assignment-50044237",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "onboarding.tips.debug.path": "C:/Users/50044237/IdeaProjects/OOP-Assignment-50044237/src/Main.java",
++    "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+@@ -42,8 +50,25 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1713354930606</updated>
++      <workItem from="1716127900951" duration="1082000" />
++    </task>
++    <task id="LOCAL-00001" summary="commit creation&#10;&#10;started menu">
++      <option name="closed" value="true" />
++      <created>1713950221798</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1713950221798</updated>
+     </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="commit creation&#10;&#10;started menu" />
++    <option name="LAST_COMMIT_MESSAGE" value="commit creation&#10;&#10;started menu" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+Index: src/TransactionType.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/TransactionType.java b/src/TransactionType.java
+new file mode 100644
+--- /dev/null	(date 1716373146428)
++++ b/src/TransactionType.java	(date 1716373146428)
+@@ -0,0 +1,10 @@
++
++/**
++ * represents the two possible types of transaction
++ */
++public enum TransactionType
++{
++   WITHDRAWAL,
++    CREDIT
++}
++
