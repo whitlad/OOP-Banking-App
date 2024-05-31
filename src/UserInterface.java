@@ -218,12 +218,14 @@ public class UserInterface {
 
         Account account = bank.getAccountByNumber(accountNumber);
         if (account != null) {
+            Customer customer = account.getCustomer();
             System.out.println("Please enter amount to deposit:");
             int amount = Integer.parseInt(reader.getInput());
 
             account.addBalance(amount);
             account.addTransaction(new Transaction(TransactionType.DEPOSIT, amount));
-            System.out.println("Deposited " + amount + " to account " + accountNumber);
+            System.out.println("Deposited " + amount + " to account "+ accountNumber + " " + "Customer ID: "  + customer.getCustomerID() +
+                    "\nName: " + customer.getFirstName() + " " + customer.getLastName() +" " + "Updated Balance: " + (account.getBalance + amount));  //will this add the deposit to the balance
         } else {
             System.out.println("Account not found.");
         }

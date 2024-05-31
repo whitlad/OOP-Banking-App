@@ -11,6 +11,7 @@ import java.util.HashSet;
  */
 public abstract class Account {
     public static int NEXT_ACCOUNT_NUMBER = 1000; //starting number of first account opened
+    public int getBalance;
     private int accountNumber;
     private int balance;
     private boolean active; //is it open
@@ -35,7 +36,9 @@ public abstract class Account {
     }
 
     /// check out the savings accounts
-    public abstract void addBalance(int numBalance);
+        public void addBalance(int numBalance) {
+        this.balance += numBalance; // Ensure this line updates the balance
+    }
 
     @Override
     public String toString() {
@@ -83,4 +86,6 @@ public abstract class Account {
     public Customer getCustomer() {
         return this.customer;
     }
-}
+
+    }
+
