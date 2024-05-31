@@ -202,7 +202,8 @@ public class UserInterface {
         Account account = bank.getAccountByNumber(accountNumber);
         if (account != null) {
             account.deactivate();
-            System.out.println("Account " + accountNumber + " closed.");
+            Customer customer = account.getCustomer();  // Get the customer associated with the account
+            System.out.println("Account " + accountNumber + " closed for Customer ID: " + customer.getCustomerID() + ", Name: " + customer.getFirstName() + " " + customer.getLastName() + ".");
         } else {
             System.out.println("Account not found.");
         }

@@ -79,4 +79,8 @@ public abstract class Account {
     public int getAccountNumber() {
         return this.accountNumber;
     }
+
+    public Customer getCustomer() {
+        return this.customer;
+    }
 }
