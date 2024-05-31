@@ -125,17 +125,34 @@ public class UserInterface {
      */
     private void updateCustomer() {
         System.out.println("Please enter customer ID to update:");
-        int customerId = Integer.parseInt(reader.getInput());
+        int customerId = Integer.parseInt(reader.getInput());  //DAWN
 
         Customer customer = bank.getCustomerByNumber(customerId);
         if (customer != null) {
             System.out.println("Please enter new first name:");
             String firstName = reader.getInput();
+
             System.out.println("Please enter new last name:");
             String lastName = reader.getInput();
 
+            System.out.println("Please enter new address:");
+            String address = reader.getInput();
+
+            System.out.println("Please enter new postcode:");
+            String postcode = reader.getInput();
+
+            System.out.println("Please enter new phone number:");
+            String phoneNumber = reader.getInput();
+
+
             customer.setFirstName(firstName);
             customer.setLastName(lastName);
+            customer.setAddress(address);
+            customer.setPostCode(postcode);
+            customer.setPhoneNumber(phoneNumber);
+
+
+
 
             System.out.println("****** Customer details updated ******\n" + customer);
         } else {
@@ -167,7 +184,7 @@ public class UserInterface {
 
         Customer customer = bank.getCustomerByNumber(customerId);
         if (customer != null) {
-            System.out.println("Choose account type: 1 for Current, 2 for Savings, 3 for High Interest Savings");
+            System.out.println("Choose account type: \n1 for Current \n2 for Savings \n3 for High Interest Savings");
             int accountType = Integer.parseInt(reader.getInput());
 
             Account account;
@@ -186,7 +203,8 @@ public class UserInterface {
                     return;
             }
             bank.addAccount(account);
-            System.out.println("****** New account opened for customer " + customer.getFirstName() + " " + customer.getLastName() + " \n" + account + "******");
+            System.out.println("****** New account opened for customer " + customer.getFirstName() + " " + customer.getLastName() + " " +
+                    "\n" + account + "******");
         } else {
             System.out.println("Customer not found.");
         }
@@ -218,40 +236,49 @@ public class UserInterface {
 
         Account account = bank.getAccountByNumber(accountNumber);
         if (account != null) {
+            Customer customer = account.getCustomer();
             System.out.println("Please enter amount to deposit:");
-            int amount = Integer.parseInt(reader.getInput());
+            int amount = Integer.parseInt(reader.getInput());  //deposit amount to deposit to the account
 
             account.addBalance(amount);
             account.addTransaction(new Transaction(TransactionType.DEPOSIT, amount));
-            System.out.println("Deposited " + amount + " to account " + accountNumber);
+            //calculation for correct balance
+            //int updatedBalance1 = account.getBalance() + amount + account.getBalance();//doesn't work not sure how to get a continue updating balance
+            int updatedBalance = account.getBalance() + amount;  //test this if this updates the actual going balance it only adds it once not sure how to continue when menu 6 is run again
+            System.out.println("Deposited " + amount + " to account " + accountNumber + " " + "Customer ID: " + customer.getCustomerID() +
+                    "\nName: " + customer.getFirstName() + " " + customer.getLastName() + " " + "Updated Balance : " + (account.getBalance + amount) );//variable for the balance plus the amount deposited
         } else {
             System.out.println("Account not found.");
         }
     }
+
+
 
     /**
      * Allows a user to withdraw money from an account.
      */
     private void withdrawFromAccount() {
         System.out.println("Please enter account number to withdraw from:");
-        int accountNumber = Integer.parseInt(reader.getInput());
+        int accountNumber = Integer.parseInt(reader.getInput());//DAWN
 
         Account account = bank.getAccountByNumber(accountNumber);
         if (account != null) {
             System.out.println("Please enter amount to withdraw:");
-            int amount = Integer.parseInt(reader.getInput());
+            int amount = Integer.parseInt(reader.getInput());  //Dawn
 
-            if (amount <= account.getBalance()) {
+            try {
                 account.useBalance(amount);
                 account.addTransaction(new Transaction(TransactionType.WITHDRAWAL, amount));
-                System.out.println("Withdrew " + amount + " from account " + accountNumber);
-            } else {
+                System.out.println("Withdrew " + amount + " from account " + accountNumber +
+                        "\nUpdated Balance : " + (account.getBalance - amount ));  // reduces the balance by the entered amount
+            } catch (IllegalArgumentException e) {
                 System.out.println("Insufficient funds.");
             }
         } else {
             System.out.println("Account not found.");
         }
     }
+
 
     /**
      * Displays a list of all customers.
@@ -279,6 +306,7 @@ public class UserInterface {
      */
     private void displayTransactionsOnAccount() {
         System.out.println("Please enter account number to display transactions:");
+        InputReader reader = null;
         int accountNumber = Integer.parseInt(reader.getInput());
 
         Account account = bank.getAccountByNumber(accountNumber);

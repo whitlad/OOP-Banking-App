@@ -70,7 +70,16 @@ public class Transaction {
      */
     public void showDetails()
     {
-        System.out.println(this.type.toString() + "\t" + this.amount+ "\t" + this.dateTime.toString() + "\t" + id);
+        System.out.println(this.toString());
     }
-}
+
+    /**
+     * Displays the details of the transaction
+     */
+    @Override
+    public String toString() {
+        return "Transaction ID: " + this.id + ", Type: " + this.type + ", Amount: " + this.amount + ", Date/Time: " + this.dateTime;
+    }
+    }
+
  
