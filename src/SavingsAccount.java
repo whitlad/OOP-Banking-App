@@ -37,6 +37,10 @@ public class SavingsAccount extends Account {
         //super.addBalance(numBalance + interestRate);
 
         int interest = (int)(numBalance * INTEREST_RATE); //calculate 5% interest
-        super.addBalance(numBalance + interest);//add principal interest to balance
+        //add principal interest to balance
+    }
+    @Override
+    public String toString() {
+        return "Savings Account: " + super.toString() + ", Interest Rate: " + INTEREST_RATE;
     }
 }

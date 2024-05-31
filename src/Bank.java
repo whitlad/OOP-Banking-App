@@ -109,13 +109,13 @@ public class Bank {
      */
     public Account getAccountByNumber(int accountNumber) {
         for (Account account : this.accounts) {
-            if (account.getNumber() == accountNumber) {
+            if (account.getaccountNumber() == accountNumber) {
                 return account;
             }
         }
         return null;
     }
-    //DAWN
+
 
     public HashSet<Customer> getCustomers() {
         return customers;

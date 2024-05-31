@@ -16,4 +16,15 @@ public class CurrentAccount extends Account
     {
         super(aCustomer);
     }
+
+    @Override
+    public void addBalance(int numBalance) {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Current Account: " + super.toString();
+    }
 }
+

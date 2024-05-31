@@ -186,7 +186,7 @@ public class UserInterface {
                     return;
             }
             bank.addAccount(account);
-            System.out.println("New account opened for customer " + customer.getFirstName() + " " + customer.getLastName());
+            System.out.println("******" + "New account opened for customer " + customer.getFirstName() + " " + customer.getLastName() + " \n " + accountType + account + "******");
         } else {
             System.out.println("Customer not found.");
         }
