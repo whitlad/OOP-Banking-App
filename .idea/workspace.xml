@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2137e7c8-8c90-467f-afbe-6b6749daa6be" name="Changes" comment="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin&#10;menu 1 - requires error for nulls&#10;added to string so results coming back better&#10;added stars to menu response to help see menu changes&#10;tested menu opens, option 0, option 1, option 2 &amp; option 3 (6 more to go)">
+    <list default="true" id="2137e7c8-8c90-467f-afbe-6b6749daa6be" name="Changes" comment="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin&#10;menu 1 - requires error for nulls&#10;added to string so results coming back better&#10;added stars to menu response to help see menu changes&#10;tested menu opens, option 0, option 1, option 2 &amp; option 3 (6 more to go)&#10;Menu 4 complete and updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CurrentAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrentAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HighInterestSavingsAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HighInterestSavingsAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SavingsAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SavingsAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1713354930606</updated>
-      <workItem from="1716891527888" duration="33540000" />
+      <workItem from="1716891527888" duration="37699000" />
     </task>
     <task id="LOCAL-00001" summary="This is the final created customer class">
       <option name="closed" value="true" />
@@ -163,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717110712914</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin&#10;menu 1 - requires error for nulls&#10;added to string so results coming back better&#10;added stars to menu response to help see menu changes&#10;tested menu opens, option 0, option 1, option 2 &amp; option 3 (6 more to go)&#10;Menu 4 complete and updated">
+      <option name="closed" value="true" />
+      <created>1717153243907</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717153243907</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,7 +195,8 @@
     <MESSAGE value="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin&#10;menu 1 - requires error for nulls&#10;added to string so results coming back better&#10;added stars to menu response to help see menu changes" />
     <MESSAGE value="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin&#10;menu 1 - requires error for nulls&#10;added to string so results coming back better&#10;added stars to menu response to help see menu changes&#10;tested menu opens, option 1, option 2 &amp; option 3 (7 more to go)" />
     <MESSAGE value="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin&#10;menu 1 - requires error for nulls&#10;added to string so results coming back better&#10;added stars to menu response to help see menu changes&#10;tested menu opens, option 0, option 1, option 2 &amp; option 3 (6 more to go)" />
-    <option name="LAST_COMMIT_MESSAGE" value="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin&#10;menu 1 - requires error for nulls&#10;added to string so results coming back better&#10;added stars to menu response to help see menu changes&#10;tested menu opens, option 0, option 1, option 2 &amp; option 3 (6 more to go)" />
+    <MESSAGE value="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin&#10;menu 1 - requires error for nulls&#10;added to string so results coming back better&#10;added stars to menu response to help see menu changes&#10;tested menu opens, option 0, option 1, option 2 &amp; option 3 (6 more to go)&#10;Menu 4 complete and updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="This is the final created customer class&#10;added phonenumber to &#10;customerclass&#10;account class created&#10;&#10;Code completed - testing to begin&#10;menu 1 - requires error for nulls&#10;added to string so results coming back better&#10;added stars to menu response to help see menu changes&#10;tested menu opens, option 0, option 1, option 2 &amp; option 3 (6 more to go)&#10;Menu 4 complete and updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

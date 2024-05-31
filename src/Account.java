@@ -10,7 +10,7 @@ import java.util.HashSet;
  * @Version 24/05/2024
  */
 public abstract class Account {
-    public static int NEXT_ACCOUNT_NUMBER = 1;
+    public static int NEXT_ACCOUNT_NUMBER = 1000; //starting number of first account opened
     private int accountNumber;
     private int balance;
     private boolean active; //is it open
@@ -31,8 +31,7 @@ public abstract class Account {
         this.dateActivated = null;
         this.dateClosed = null;
         this.transactions = new HashSet<>();
-        this.accountNumber= Account.NEXT_ACCOUNT_NUMBER;
-        NEXT_ACCOUNT_NUMBER++;
+        this.accountNumber = Account.NEXT_ACCOUNT_NUMBER++;
     }
 
     /// check out the savings accounts
@@ -45,33 +44,39 @@ public abstract class Account {
                 ", Active: " + active +
                 ", Date Activated: " + (dateActivated != null ? dateActivated : "N/A") +
                 ", Date Closed: " + (dateClosed != null ? dateClosed : "N/A") +
-                ", Customer ID: " + customer.getNumber();
+                ", Customer ID: " + customer.getCustomerID();
     }
 
     public void addTransaction(Transaction transaction) {
+        this.transactions.add(transaction);
     }
 
     public double getBalance() {
-        return 0;
+        return balance;
     }
 
     public void useBalance(int amount) {
+        if (amount <= balance) {
+            balance -= amount;
+        }
     }
 
     public void showTransactions() {
+        for (Transaction transaction : transactions) {
+            System.out.println(transaction);
+        }
     }
 
     public void deactivate() {
+        this.active = false;
+        this.dateClosed = LocalDate.now();
     }
 
     public void displayDetails() {
+        System.out.println(this.toString());
     }
 
-    public int getaccountNumber() {
-        return this.accountNumber();
-    }
-
-    private int accountNumber() {
-        return this.accountNumber();
+    public int getAccountNumber() {
+        return this.accountNumber;
     }
 }

@@ -72,7 +72,7 @@ public class Customer {
         return dateOfBirth;
     }
 
-    public int getNumber() {
+    public int getCustomerID() {
         return this.customerID;
     }
 
@@ -125,7 +125,7 @@ public class Customer {
      * Displays the details of the customer.
      */
     public void displayDetails() {
-        System.out.println(this.getNumber() + "\t" + this.getFirstName() + "\t" + this.getLastName() + "\t" + this.getAddress() + "\t" + this.getPostCode()
+        System.out.println(this.getCustomerID() + "\t" + this.getFirstName() + "\t" + this.getLastName() + "\t" + this.getAddress() + "\t" + this.getPostCode()
                 + "\t" + "\t" + this.getPhoneNumber() + "\t" + this.getDateOfBirth().toString());
     }
 
@@ -158,4 +158,7 @@ public class Customer {
                 "\nPhone Number: " + phoneNumber +
                 "\nDate of Birth: " + dateOfBirth;
     }
+
+
+
 }

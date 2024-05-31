@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 
+
 /**
  * Provides a user interface for the Banking Application.
  * Handles interactions with the user through a simple menu system.
@@ -32,7 +33,7 @@ public class UserInterface {
         while (!quit) {
             System.out.println("\n*********************************" +
                     "           \nWelcome to Kilmaine Credit Union" +
-                                "\n*********************************");
+                    "\n*********************************");
             System.out.println("Please choose an option: ");
             System.out.println("1. Create Customer");
             System.out.println("2. Update Customer");
@@ -96,7 +97,6 @@ public class UserInterface {
      * Allows a user to create a new customer.
      */
     private void createCustomer() {
-
         System.out.println("Please enter first name:");
         String firstName = reader.getInput();
 
@@ -113,11 +113,11 @@ public class UserInterface {
         String phoneNumber = reader.getInput();
 
         System.out.println("Please enter date of birth (DD-MM-YYYY):");
-        String dateOfBirth= reader.getInput();
+        String dateOfBirth = reader.getInput();
 
         Customer customer = new Customer(firstName, lastName, address, postcode, phoneNumber, dateOfBirth);
         bank.addCustomer(customer);
-        System.out.println("****"+"New customer added"+"****\n"  + customer);
+        System.out.println("**** New customer added ****\n" + customer);
     }
 
     /**
@@ -137,9 +137,9 @@ public class UserInterface {
             customer.setFirstName(firstName);
             customer.setLastName(lastName);
 
-            System.out.println("******"+"Customer details updated"+ "******\n1"  + customer);
+            System.out.println("****** Customer details updated ******\n" + customer);
         } else {
-            System.out.println("*****************"+"Customer not found."+"*****************");
+            System.out.println("***************** Customer not found. *****************");
         }
     }
 
@@ -148,13 +148,13 @@ public class UserInterface {
      */
     private void displayCustomerDetails() {
         System.out.println("Please enter customer ID to display details:");
-        int customerID= Integer.parseInt(reader.getInput());
+        int customerID = Integer.parseInt(reader.getInput());
 
         Customer customer = bank.getCustomerByNumber(customerID);
         if (customer != null) {
             System.out.println(customer);
         } else {
-            System.out.println("*****************"+"Customer not found."+"*****************");
+            System.out.println("***************** Customer not found. *****************");
         }
     }
 
@@ -186,7 +186,7 @@ public class UserInterface {
                     return;
             }
             bank.addAccount(account);
-            System.out.println("******" + "New account opened for customer " + customer.getFirstName() + " " + customer.getLastName() + " \n " + accountType + account + "******");
+            System.out.println("****** New account opened for customer " + customer.getFirstName() + " " + customer.getLastName() + " \n" + account + "******");
         } else {
             System.out.println("Customer not found.");
         }
@@ -264,7 +264,6 @@ public class UserInterface {
     /**
      * Displays all customers and their associated accounts.
      */
-
     private void displayCustomerAndAccounts() {
         for (Customer customer : bank.getCustomers()) {
             System.out.println(customer);

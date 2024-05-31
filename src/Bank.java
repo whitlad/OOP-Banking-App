@@ -90,12 +90,12 @@ public class Bank {
 
     /**
      * Returns a customer by their customer number.
-     * @param customerNumber the customer number
+     * @param customerID the customer number
      * @return the customer with the given customer number, or null if not found
      */
-    public Customer getCustomerByNumber(int customerNumber) {
+    public Customer getCustomerByNumber(int customerID) {
         for (Customer customer : this.customers) {
-            if (customer.getNumber() == customerNumber) {
+            if (customer.getCustomerID() == customerID) {
                 return customer;
             }
         }
@@ -109,17 +109,14 @@ public class Bank {
      */
     public Account getAccountByNumber(int accountNumber) {
         for (Account account : this.accounts) {
-            if (account.getaccountNumber() == accountNumber) {
+            if (account.getAccountNumber() == accountNumber) {
                 return account;
             }
         }
         return null;
     }
 
-
     public HashSet<Customer> getCustomers() {
         return customers;
     }
 }
-
-
