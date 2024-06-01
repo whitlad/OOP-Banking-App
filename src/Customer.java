@@ -12,13 +12,13 @@ import java.util.Objects;
 public class Customer {
     private static int NEXT_CUSTOMER_NUMBER = 1;
     private final int customerID; // Customer ID number
+    private final String dateOfBirth; // Date of birth of customer
+    private final List<Account> accounts;
     private String firstName; // First name of customer
     private String lastName; // Last name of customer
     private String address; // Address of customer
     private String postCode; // Postcode of customer
     private String phoneNumber; // Phone number of customer
-    private final String dateOfBirth; // Date of birth of customer
-    private final List<Account> accounts;
 
     /**
      * Constructs a new Customer with the specified details.
@@ -52,9 +52,26 @@ public class Customer {
         return firstName;
     }
 
+    // Setters
+    public void setFirstName(String firstName) {
+        if (firstName != null && !firstName.trim().isEmpty()) {
+            this.firstName = firstName;
+        } else {
+            throw new IllegalArgumentException("Name cannot be null or empty.");
+        }
+    }
+
     public String getLastName() {
 
         return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        if (lastName != null && !lastName.trim().isEmpty()) {
+            this.lastName = lastName;
+        } else {
+            throw new IllegalArgumentException("Name cannot be null or empty.");
+        }
     }
 
     public String getAddress() {
@@ -62,14 +79,39 @@ public class Customer {
         return address;
     }
 
+    public void setAddress(String address) {
+        if (address != null && !address.trim().isEmpty()) {
+            this.address = address;
+        } else {
+            System.out.println("Address cannot be null or empty."); //not sure if this is better than throw illegal argument
+        }
+    }
+
     public String getPostCode() {
 
         return postCode;
     }
 
+    public void setPostCode(String postCode) {
+        if (postCode != null && !postCode.trim().isEmpty()) {
+            this.postCode = postCode;
+        } else {
+            throw new IllegalArgumentException("Postcode cannot be null or empty.");
+        }
+    }
+
     public String getPhoneNumber() {
 
         return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        String phoneStr = String.valueOf(phoneNumber);
+        if (phoneStr.length() >= 10 && phoneStr.length() <= 15) {
+            this.phoneNumber = phoneNumber;
+        } else {
+            System.out.println("Phone number must be between 10 and 15 digits long.");
+        }
     }
 
     public String getDateOfBirth() {
@@ -86,49 +128,9 @@ public class Customer {
 
         return this.accounts;
     }
+
     public void addAccount(Account account) {
         this.accounts.add(account); // method to add account to customer's account list
-    }
-
-    // Setters
-    public void setFirstName(String firstName) {
-        if (firstName != null && !firstName.trim().isEmpty()) {
-            this.firstName = firstName;
-        } else {
-            throw new IllegalArgumentException("Name cannot be null or empty.");
-        }
-    }
-
-    public void setLastName(String lastName) {
-        if (lastName != null && !lastName.trim().isEmpty()) {
-            this.lastName = lastName;
-        } else {
-            throw new IllegalArgumentException("Name cannot be null or empty.");
-        }
-    }
-
-    public void setAddress(String address) {
-        if (address != null && !address.trim().isEmpty()) {
-            this.address = address;
-        } else {
-            System.out.println("Address cannot be null or empty."); //not sure if this is better than throw illegal argument
-        }
-    }
-
-    public void setPostCode(String postCode) {
-        if (postCode != null && !postCode.trim().isEmpty()) {
-            this.postCode = postCode;
-        } else {
-            throw new IllegalArgumentException("Postcode cannot be null or empty.");
-        }
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        String phoneStr = String.valueOf(phoneNumber);
-        if (phoneStr.length() >= 10 && phoneStr.length() <= 15) {
-            this.phoneNumber = phoneNumber;
-        } else { System.out.println ("Phone number must be between 10 and 15 digits long.");
-        }
     }
 
     /**
@@ -142,6 +144,7 @@ public class Customer {
     /**
      * Checks if this customer is equal to another object.
      * Two customers are considered equal if their customer ID numbers are the same.
+     *
      * @param obj the object to compare
      * @return true if the customers have the same ID number, false if they don't
      */

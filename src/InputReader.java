@@ -14,21 +14,23 @@ public class InputReader {
     /**
      * *Constructs a new InputReader
      */
-    public InputReader(){
+    public InputReader() {
         scanner = new Scanner(System.in); //system in users input
     }
 
     /**
      * Returns the line of input entered by the user at the command line
+     *
      * @return the line of input entered by the user at the command line as a string
      */
     public String getInput() {
         return scanner.nextLine();
     }
+
     /**
      * Closes the scanner resource
      */
-    public void close(){
+    public void close() {
         scanner.close();
     }
 

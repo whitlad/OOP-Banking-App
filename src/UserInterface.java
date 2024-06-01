@@ -7,8 +7,8 @@ import java.time.LocalDate;
  * Users can create customers, update customer information, display customer details,
  * manage bank accounts, and handle transactions.
  *
- * @Author Dawn Whitla
  * @version 24/05/2024
+ * @Author Dawn Whitla
  */
 public class UserInterface {
 
@@ -152,8 +152,6 @@ public class UserInterface {
             customer.setPhoneNumber(phoneNumber);
 
 
-
-
             System.out.println("****** Customer details updated ******\n" + customer);
         } else {
             System.out.println("***************** Customer not found. *****************");
@@ -247,12 +245,11 @@ public class UserInterface {
             //int updatedBalance1 = account.getBalance() + amount + account.getBalance();//doesn't work not sure how to get a continue updating balance
             int updatedBalance = account.getBalance() + amount;  //test this if this updates the actual going balance it only adds it once not sure how to continue when menu 6 is run again
             System.out.println("Deposited " + amount + " to account " + accountNumber + " " + "Customer ID: " + customer.getCustomerID() +
-                    "\nName: " + customer.getFirstName() + " " + customer.getLastName() + " " + "Updated Balance : " + (account.getBalance + amount) );//variable for the balance plus the amount deposited
+                    "\nName: " + customer.getFirstName() + " " + customer.getLastName() + " " + "Updated Balance : " + (account.getBalance + amount));//variable for the balance plus the amount deposited
         } else {
             System.out.println("Account not found.");
         }
     }
-
 
 
     /**
@@ -271,7 +268,7 @@ public class UserInterface {
                 account.useBalance(amount);
                 account.addTransaction(new Transaction(TransactionType.WITHDRAWAL, amount));
                 System.out.println("Withdrew " + amount + " from account " + accountNumber +
-                        "\nUpdated Balance : " + (account.getBalance - amount ));  // reduces the balance by the entered amount
+                        "\nUpdated Balance : " + (account.getBalance - amount));  // reduces the balance by the entered amount
             } catch (IllegalArgumentException e) {
                 System.out.println("Insufficient funds.");
             }
@@ -287,8 +284,8 @@ public class UserInterface {
     private void displayAllCustomers() {
         for (Customer customer : bank.getCustomers()) {
             System.out.println(customer);
-            for (Account account : customer.getAccounts()){
-                System.out.print("" +account);
+            for (Account account : customer.getAccounts()) {
+                System.out.print("" + account);
             }
         }
     }

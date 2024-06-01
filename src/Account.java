@@ -11,18 +11,19 @@ import java.util.HashSet;
  */
 public abstract class Account {
     public static int NEXT_ACCOUNT_NUMBER = 1000; //starting number of first account opened
-    public double getBalance;  //is this required here or elsewhere DAWN
     private final int accountNumber;
-    private int balance;
-    private boolean active; //is it open
     private final LocalDate dateActivated; //when opened
-    private LocalDate dateClosed;//when closed
     private final Customer customer;
     private final HashSet<Transaction> transactions;
+    public double getBalance;  //is this required here or elsewhere DAWN
+    private int balance;
+    private boolean active; //is it open
+    private LocalDate dateClosed;//when closed
 
     /**
      * Constructs a new Account with the specified customer
      * Initialises the account with a balance of 0, inactive status, and no activation or closure date
+     *
      * @param aCustomer the customer who owns this account
      */
     public Account(Customer aCustomer) {
@@ -36,7 +37,7 @@ public abstract class Account {
     }
 
     /// check out the savings accounts
-        public void addBalance(int numBalance) {
+    public void addBalance(int numBalance) {
         this.balance += numBalance; // Ensure this line updates the balance not working yet 1st June
     }
 
@@ -57,7 +58,7 @@ public abstract class Account {
     }
 
 
-    public int getBalance(){
+    public int getBalance() {
         return this.balance;
     }
 
@@ -69,8 +70,8 @@ public abstract class Account {
     public void useBalance(int numBalance) {
         if (numBalance <= this.balance) {
             this.balance -= numBalance;
-        }else{
-            System.out.println ("Insufficient Funds");  //error if not enough funds
+        } else {
+            System.out.println("Insufficient Funds");  //error if not enough funds
         }
     }
 
@@ -97,5 +98,5 @@ public abstract class Account {
         return this.customer;
     }
 
-    }
+}
 

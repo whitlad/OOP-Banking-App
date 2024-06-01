@@ -3,8 +3,8 @@ import java.util.HashSet;
 /**
  * Represents a Bank that manages customers, accounts, and transactions.
  *
- * @Author Dawn Whitla
  * @version 24/05/2024
+ * @Author Dawn Whitla
  */
 public class Bank {
     private final HashSet<Account> accounts;
@@ -22,6 +22,7 @@ public class Bank {
 
     /**
      * Adds a new account to the bank.
+     *
      * @param account the account to add
      */
     public void addAccount(Account account) {
@@ -30,6 +31,7 @@ public class Bank {
 
     /**
      * Adds a new customer to the bank.
+     *
      * @param customer the customer to add
      */
     public void addCustomer(Customer customer) {
@@ -38,6 +40,7 @@ public class Bank {
 
     /**
      * Adds a new transaction to the bank.
+     *
      * @param transaction the transaction to add
      */
     public void addTransaction(Transaction transaction) {
@@ -46,6 +49,7 @@ public class Bank {
 
     /**
      * Returns the number of accounts in the bank.
+     *
      * @return the number of accounts
      */
     public int numberOfAccounts() {
@@ -54,6 +58,7 @@ public class Bank {
 
     /**
      * Returns the number of customers in the bank.
+     *
      * @return the number of customers
      */
     public int numberOfCustomers() {
@@ -62,6 +67,7 @@ public class Bank {
 
     /**
      * Returns the number of transactions in the bank.
+     *
      * @return the number of transactions
      */
     public int numberOfTransactions() {
@@ -90,6 +96,7 @@ public class Bank {
 
     /**
      * Returns a customer by their customer number.
+     *
      * @param customerID the customer number
      * @return the customer with the given customer number, or null if not found
      */
@@ -103,7 +110,8 @@ public class Bank {
     }
 
     /**
-     * Returns an account by its account number.
+     * Returns an account by its account number
+     *
      * @param accountNumber the account number
      * @return the account with the given account number, or null if not found
      */

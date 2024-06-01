@@ -7,10 +7,10 @@
  *
  * @Author Dawn Whitla
  * @Version 24/05/2024
-  */
+ */
 public class Main {
     public static void main(String[] args) {
-UserInterface ui = new UserInterface();
-ui.showMainMenu();
-        }
+        UserInterface ui = new UserInterface();
+        ui.showMainMenu();
     }
+}
