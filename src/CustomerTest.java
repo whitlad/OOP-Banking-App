@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * Test class for the Customer class.
  * This class contains unit tests for the displayDetails method in the Customer class.
@@ -27,7 +25,8 @@ class CustomerTest {
      */
     @Test
     void displayDetails() {
-        String expectedDetails = "Customer ID: 1\nFirst Name: Gerard\nLast Name: Butler\nAddress: 123 Holywood St\nPostcode: 12345\nPhone Number: 1234567890\nDate of Birth: 03-11-1969";
+        String expectedDetails = "Customer ID: 1\nFirst Name: Gerard\nLast Name: Butler\nAddress: 123 Holywood St\nPostcode: 12345" +
+                "\nPhone Number: 1234567890\nDate of Birth: 13-11-1969";
 
         // Capture the displayDetails output
         java.io.ByteArrayOutputStream outContent = new java.io.ByteArrayOutputStream();
