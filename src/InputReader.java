@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 
 public class InputReader {
-    private Scanner scanner;
+    private final Scanner scanner;
 
     /**
      * *Constructs a new InputReader

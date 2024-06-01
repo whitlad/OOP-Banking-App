@@ -8,7 +8,7 @@
  */
 public class HighInterestSavingsAccount extends Account {
     private static final double INTEREST_RATE = 0.15; // 15% interest rate
-    private int transactionLimitPerYear = 10;
+    private final int transactionLimitPerYear = 10;
     private int numberOfTransactionsSoFar = 0;
 
     /**

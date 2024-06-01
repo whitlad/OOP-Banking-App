@@ -12,13 +12,13 @@ import java.util.HashSet;
 public abstract class Account {
     public static int NEXT_ACCOUNT_NUMBER = 1000; //starting number of first account opened
     public double getBalance;  //is this required here or elsewhere DAWN
-    private int accountNumber;
+    private final int accountNumber;
     private int balance;
     private boolean active; //is it open
-    private LocalDate dateActivated; //when opened
+    private final LocalDate dateActivated; //when opened
     private LocalDate dateClosed;//when closed
-    private Customer customer;
-    private HashSet<Transaction> transactions;
+    private final Customer customer;
+    private final HashSet<Transaction> transactions;
 
     /**
      * Constructs a new Account with the specified customer
@@ -86,7 +86,7 @@ public abstract class Account {
     }
 
     public void displayDetails() {
-        System.out.println(this.toString());
+        System.out.println(this);
     }
 
     public int getAccountNumber() {

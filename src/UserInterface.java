@@ -13,8 +13,8 @@ import java.time.LocalDate;
 public class UserInterface {
 
     // Use public for testing and change to private when finished
-    private InputReader reader;
-    private Bank bank; // Main bank object
+    private final InputReader reader;
+    private final Bank bank; // Main bank object
 
     /**
      * Constructs a new UserInterface and initializes the InputReader and Bank.
@@ -203,6 +203,7 @@ public class UserInterface {
                     return;
             }
             bank.addAccount(account);
+            customer.addAccount(account);
             System.out.println("****** New account opened for customer " + customer.getFirstName() + " " + customer.getLastName() + " " +
                     "\n" + account + "******");
         } else {
@@ -286,6 +287,9 @@ public class UserInterface {
     private void displayAllCustomers() {
         for (Customer customer : bank.getCustomers()) {
             System.out.println(customer);
+            for (Account account : customer.getAccounts()){
+                System.out.print("" +account);
+            }
         }
     }
 
@@ -306,7 +310,6 @@ public class UserInterface {
      */
     private void displayTransactionsOnAccount() {
         System.out.println("Please enter account number to display transactions:");
-        InputReader reader = null;
         int accountNumber = Integer.parseInt(reader.getInput());
 
         Account account = bank.getAccountByNumber(accountNumber);

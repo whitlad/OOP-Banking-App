@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,14 +11,14 @@ import java.util.Objects;
  */
 public class Customer {
     private static int NEXT_CUSTOMER_NUMBER = 1;
-    private int customerID; // Customer ID number
+    private final int customerID; // Customer ID number
     private String firstName; // First name of customer
     private String lastName; // Last name of customer
     private String address; // Address of customer
     private String postCode; // Postcode of customer
     private String phoneNumber; // Phone number of customer
-    private String dateOfBirth; // Date of birth of customer
-    private List<Account> accounts;
+    private final String dateOfBirth; // Date of birth of customer
+    private final List<Account> accounts;
 
     /**
      * Constructs a new Customer with the specified details.
@@ -49,35 +48,46 @@ public class Customer {
 
     // Getters
     public String getFirstName() {
+
         return firstName;
     }
 
     public String getLastName() {
+
         return lastName;
     }
 
     public String getAddress() {
+
         return address;
     }
 
     public String getPostCode() {
+
         return postCode;
     }
 
     public String getPhoneNumber() {
+
         return phoneNumber;
     }
 
     public String getDateOfBirth() {
+
         return dateOfBirth;
     }
 
     public int getCustomerID() {
+
         return this.customerID;
     }
 
     public List<Account> getAccounts() {
+
         return this.accounts;
+    }
+    public void addAccount(Account account) {
+        this.accounts.add(account); // method to add account to customer's account list
     }
 
     // Setters
@@ -101,7 +111,7 @@ public class Customer {
         if (address != null && !address.trim().isEmpty()) {
             this.address = address;
         } else {
-            throw new IllegalArgumentException("Address cannot be null or empty.");
+            System.out.println("Address cannot be null or empty."); //not sure if this is better than throw illegal argument
         }
     }
 
@@ -126,7 +136,7 @@ public class Customer {
      */
     public void displayDetails() {
         System.out.println(this.getCustomerID() + "\t" + this.getFirstName() + "\t" + this.getLastName() + "\t" + this.getAddress() + "\t" + this.getPostCode()
-                + "\t" + "\t" + this.getPhoneNumber() + "\t" + this.getDateOfBirth().toString());
+                + "\t" + "\t" + this.getPhoneNumber() + "\t" + this.getDateOfBirth());
     }
 
     /**
@@ -158,7 +168,6 @@ public class Customer {
                 "\nPhone Number: " + phoneNumber +
                 "\nDate of Birth: " + dateOfBirth;
     }
-
 
 
 }

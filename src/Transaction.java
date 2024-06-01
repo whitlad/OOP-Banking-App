@@ -8,10 +8,10 @@ import java.time.LocalDateTime;
  */
 public class Transaction {
     private static int NEXT_TRANSACTION_ID = 1;
-    private int id;
-    private int amount;
-    private LocalDateTime dateTime;
-    private TransactionType type;
+    private final int id;
+    private final int amount;
+    private final LocalDateTime dateTime;
+    private final TransactionType type;
 
     /**
      * Constructs a new Transaction with the specified type and amount
@@ -70,7 +70,7 @@ public class Transaction {
      */
     public void showDetails()
     {
-        System.out.println(this.toString());
+        System.out.println(this);
     }
 
     /**

@@ -7,9 +7,9 @@ import java.util.HashSet;
  * @version 24/05/2024
  */
 public class Bank {
-    private HashSet<Account> accounts;
-    private HashSet<Customer> customers;
-    private HashSet<Transaction> transactions;
+    private final HashSet<Account> accounts;
+    private final HashSet<Customer> customers;
+    private final HashSet<Transaction> transactions;
 
     /**
      * Constructs a new Bank with empty sets of accounts, customers, and transactions.
